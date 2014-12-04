@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
 // declare global variables
-var wrongCounter = 1;
+var wrongCounter = 0;
 var score = 0;
 var qNum = 0;
 
 // hide questions at start
-$(".q1, .q2, .q3, .q4, .q5, .q6, .game-info").hide();
+$(".q1, .q2, .q3, .q4, .q5, .q6, .game-info, .instructions, .qNum, .score, .feedback").hide();
 
 // Pause audio when user clicks anywhere on page.
 // Thanks for help here:
@@ -24,23 +24,27 @@ $(document).click(function(){
 $(".next").on("click", function() {
   // set wrongCounter, so can give different feedback
   // for each wrong answer
-  wrongCounter = 1;
+  wrongCounter = 0;
   qNum++;
   $(".feedback").empty();
-  $(".feedback").append("Listen and match the film to the music.");
+  $(".feedback").show();
+  $(".feedback").removeClass("feedback-right");
+  $(".feedback").removeClass("feedback-wrong");
+  // $(".feedback").append("Listen and match the film to the music.");
   $(".qNum").empty();
   if (qNum !== 6) {
     $(".qNum").append(qNum + "/5");
     $(".q" + qNum).show();
     $(".q" + (qNum - 1)).hide();
-    $(".game-info").show();
-    $(".next").empty();
-    $(".next").append("Next");
+    $(".game-info, .instructions, .qNum, .score").show();
+    $(".next").hide();
+    // $(".next").empty();
+    // $(".next").append("Next");
   }
   else {
     $(".q6").show();
     $(".q6").append(finalScore());
-    $(".next, .game-info, .q5").hide();
+    $(".next, .game-info, .q5, .instructions, .score").hide();
   }
 });
 
@@ -48,22 +52,22 @@ $(".next").on("click", function() {
 var finalScore = function() {
   $(".game-info, .next").hide();
     if (score === 100) {
-      $(".q6").append("<p>You chose...very wisely. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... very wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 80) {
-      $(".q6").append("<p>You chose...wisely. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 60) {
-      $(".q6").append("<p>You chose...quite wisely. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... quite wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 40) {
-      $(".q6").append("<p>You chose...a little poorly. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... a little poorly.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 20) {
-      $(".q6").append("<p>You chose...poorly. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... poorly.</p><p>Your final score is " + score + "%.</p>");
     }
     else {
-      $(".q6").append("<p>You chose...very poorly. Your final score is " + score + "%</p>");
+      $(".q6").append("<p>You chose... very poorly.</p><p>Your final score is " + score + "%.</p>");
     }
   };
 
@@ -136,7 +140,7 @@ var q5 = new Question (
   );
 
 // Paste question object properties into CSS containers.
-$(".q0").append("<p>Greetings, music lovers!</p><p>John Williams has written many of the greatest film scores of the past 40 years. This quiz is a small tribute to his musical talents. So can you match the music to the film?</p><p>Sit back, get your musical ears ready, and... turn the volume up!</p>");
+$(".q0").append("<p>Greetings, music lovers!</p><p>John Williams has written many of the greatest film scores of the past 40 years:</p><p><b>Star Wars, ET, Indiana Jones, Jurassic Park, Schindler's List and Harry Potter</b> (to name a few).</p><p>This quiz is a small tribute to his musical talents.</p><p>So sit back, get your musical ears ready and... turn the volume up!</p>");
 $(".q1").append(q1.qAudio, q1.a1, q1.a2, q1.a3, q1.a4);
 $(".q2").append(q2.qAudio, q2.a1, q2.a2, q2.a3, q2.a4);
 $(".q3").append(q3.qAudio, q3.a1, q3.a2, q3.a3, q3.a4);
@@ -152,25 +156,29 @@ $(".right").one("click", function() {
   $(".feedback").addClass("feedback-right");
   $(this).addClass("rightShow");
   $(this).append("<audio src='tada-right.mp3' preload='auto' autoplay volume=.2></audio>");
-  if (wrongCounter === 1) {
+  $(".next").empty();
+  $(".next").show();
+  $(".next").append("Next");
+  if (wrongCounter === 0) {
     score += 20;
   }
   $(".score").empty();
   $(".score").append(score + "%");
-  
+
   // This makes sure player can't pick a wrong answer after selecting the right answer.
   wrongCounter += 4;
 });
 
 // Feedback if player chooses wrong answer. Different feedback is given for first, second and third wrong answer.
 $(".wrong").one("click", function() {
-  $(".feedback").removeClass("feedback-right");
-  $(".feedback").addClass("feedback-wrong");
+  // $(".feedback").removeClass("feedback-right");
+  // $(".feedback").addClass("feedback-wrong");
+  wrongCounter++;
   if (wrongCounter < 4) {
-  $(this).addClass("wrongShow");
-  $(this).append("<audio src='gongWrong.mp3' preload='auto' autoplay ></audio>");
-  }
-  else {
+    $(".feedback").removeClass("feedback-right");
+    $(".feedback").addClass("feedback-wrong");
+    $(this).addClass("wrongShow");
+    $(this).append("<audio src='gongWrong.mp3' preload='auto' autoplay ></audio>");
   }
   if (wrongCounter === 1) {
     $(".feedback").empty();
@@ -184,35 +192,7 @@ $(".wrong").one("click", function() {
     $(".feedback").empty();
     $(".feedback").append("Maybe you just like the sound of gongs?");
   }
-  wrongCounter++;
 });
-
-// ***************************************************************************************************************************
-
-// Final score page
-// if (qNum === 6) {
-//   alert("hello!");
-//   $(".game-info, .next").hide();
-//   $(".q6").show();
-//   if (score === 100) {
-//     $(".q6").append("<p>You chose...very wisely. Your final score is " + score + "%</p>");
-//   }
-//   else if (score === 80) {
-//     $(".q6").append("<p>You chose...wisely. Your final score is " + score + "%</p>");
-//   }
-//   else if (score === 60) {
-//     $(".q6").append("<p>You chose...quite wisely. Your final score is " + score + "%</p>");
-//   }
-//   else if (score === 40) {
-//     $(".q6").append("<p>You chose...a little poorly. Your final score is " + score + "%</p>");
-//   }
-//   else if (score === 20) {
-//     $(".q6").append("<p>You chose...poorly. Your final score is " + score + "%</p>");
-//   }
-//   else {
-//     $(".q6").append("<p>You chose...very poorly. Your final score is " + score + "%</p>");
-//   }
-// }
 
 });
 

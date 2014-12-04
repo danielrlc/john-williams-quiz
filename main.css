@@ -16,11 +16,15 @@ h1 {
   border-bottom: solid 1px #6e91a1;
 }
 
+.instructions {
+  margin: 40px 0 0;
+  padding: 0 60px;
+}
+
 .feedback {
-  /*font-size: 1.2em;*/
   padding: 10px;
-  margin: 50px auto 10px;
-  border-radius: 15px;
+  margin: 30px auto 20px;
+  border-radius: 35px;
   width: 200px;
 }
 
@@ -37,14 +41,15 @@ h1 {
 }
 
 li {
-  padding: 15px;
+  padding: 10px;
   list-style-type: none;
-  margin: 12px;
-  border-radius: 8px;
+  margin: 12px auto;
+  border-radius: 25px;
   background-color: #fff;
   border: solid 2px #6e91a1;
   font-weight: 700;
   font-size: 1.2em;
+  width: 270px;
 }
 
 .rightShow {
@@ -60,7 +65,7 @@ li {
 }
 
 .next, .start-quiz {
-  margin: 35px auto 0;
+  margin: 35px auto;
   padding: 10px;
   text-align: center;
   width: 120px;
@@ -70,34 +75,23 @@ li {
   border: solid 2px #103d50;
 }
 
-/*audio {
-  padding: 18px 0 3px;
-}*/
-
 p {
   padding: 10px;
 }
 
-.q0, .q6 {
-  border: solid 2px #6e91a1;
-  border-radius: 8px;
-  margin: 10px auto 0;
+b {
+  font-weight: 700;
 }
 
 .q0, .q6 {
+  /*border: solid 2px #6e91a1;*/
+  border-radius: 8px;
+  margin: 20px auto;
   width: 340px;
   padding: 10px;
   line-height: 1.5;
+  /*text-align: left;*/
 }
-
-/*.game-info {
-  background-color: #6e91a1;
-  color: #fff;
-  border: solid 2px #103d50;
-  width: 170px;
-  padding: 6px;
-  line-height: 1.3;
-}*/
 
 .qNum {
   float: left;
