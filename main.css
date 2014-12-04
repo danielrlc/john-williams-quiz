@@ -152,7 +152,7 @@ b {
   display: none;
 }
 
-@media (max-width: 1053px) {
+@media (max-width: 1073px) {
   .guitar-girl1, .trombone-boy1, .accordion-girl2, .drums-boy2 {
     display: none;
   }
