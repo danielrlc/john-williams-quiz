@@ -60,11 +60,11 @@ li {
   background-color: #ffbaaa;
 }
 
-.next, .start-quiz, li {
+.next, .start-quiz, .play-again, li {
   cursor: pointer;
 }
 
-.next, .start-quiz {
+.next, .start-quiz, .play-again {
   margin: 35px auto;
   padding: 10px;
   text-align: center;

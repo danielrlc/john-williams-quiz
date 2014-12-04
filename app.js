@@ -6,7 +6,7 @@ var score = 0;
 var qNum = 0;
 
 // hide questions at start
-$(".q1, .q2, .q3, .q4, .q5, .q6, .game-info, .instructions, .qNum, .score, .feedback").hide();
+$(".q1, .q2, .q3, .q4, .q5, .q6, .game-info, .instructions, .qNum, .score, .feedback, .play-again").hide();
 
 // Pause audio when user clicks anywhere on page.
 // Thanks for help here:
@@ -38,13 +38,12 @@ $(".next").on("click", function() {
     $(".q" + (qNum - 1)).hide();
     $(".game-info, .instructions, .qNum, .score").show();
     $(".next").hide();
-    // $(".next").empty();
-    // $(".next").append("Next");
   }
   else {
     $(".q6").show();
     $(".q6").append(finalScore());
-    $(".next, .game-info, .q5, .instructions, .score").hide();
+    $(".game-info, .q5, .instructions, .score, .next").hide();
+    $(".play-again").show();
   }
 });
 
@@ -70,6 +69,10 @@ var finalScore = function() {
       $(".q6").append("<p>You chose... very poorly.</p><p>Your final score is " + score + "%.</p>");
     }
   };
+
+  $(".play-again").on("click", function() {
+    window.location.reload();
+  });
 
 // ***************************************************************************************************************************
 
