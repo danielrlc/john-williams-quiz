@@ -28,8 +28,8 @@ $(".next").on("click", function() {
   qNum++;
   $(".feedback").empty();
   $(".feedback").show();
-  $(".feedback").removeClass("feedback-right");
-  $(".feedback").removeClass("feedback-wrong");
+  // $(".feedback").removeClass("feedback-right");
+  // $(".feedback").removeClass("feedback-wrong");
   // $(".feedback").append("Listen and match the film to the music.");
   $(".qNum").empty();
   if (qNum !== 6) {
@@ -42,7 +42,7 @@ $(".next").on("click", function() {
   else {
     $(".q6").show();
     $(".q6").append(finalScore());
-    $(".game-info, .q5, .instructions, .score, .next").hide();
+    $(".game-info, .q5, .instructions, .score, .feedback, .next").hide();
     $(".play-again").show();
   }
 });
@@ -143,7 +143,7 @@ var q5 = new Question (
   );
 
 // Paste question object properties into CSS containers.
-$(".q0").append("<p>Greetings, music lovers!</p><p>John Williams has written many of the greatest film scores of the past 40 years:</p><p><b>Star Wars, ET, Indiana Jones, Jurassic Park, Schindler's List and Harry Potter</b> (to name a few).</p><p>This quiz is a small tribute to his musical talents.</p><p>So sit back, get your musical ears ready and... turn the volume up!</p>");
+$(".q0").append("<p>Greetings, music lovers!</p><p>John Williams has written a lot of the greatest film music of the past 40 years:</p><p><b>Star Wars, ET, Indiana Jones, Jurassic Park, Schindler's List and Harry Potter</b> (to name a few).</p><p>This quiz is a small tribute to his enormous musical talents.</p><p>So sit back, get your musical ears ready and... turn the volume up!</p>");
 $(".q1").append(q1.qAudio, q1.a1, q1.a2, q1.a3, q1.a4);
 $(".q2").append(q2.qAudio, q2.a1, q2.a2, q2.a3, q2.a4);
 $(".q3").append(q3.qAudio, q3.a1, q3.a2, q3.a3, q3.a4);
@@ -156,7 +156,7 @@ $(".q5").append(q5.qAudio, q5.a1, q5.a2, q5.a3, q5.a4);
 $(".right").one("click", function() {
   $(".feedback").empty();
   $(".feedback").append("Correct!");
-  $(".feedback").addClass("feedback-right");
+  // $(".feedback").addClass("feedback-right");
   $(this).addClass("rightShow");
   $(this).append("<audio src='tada-right.mp3' preload='auto' autoplay volume=.2></audio>");
   $(".next").empty();
@@ -178,8 +178,8 @@ $(".wrong").one("click", function() {
   // $(".feedback").addClass("feedback-wrong");
   wrongCounter++;
   if (wrongCounter < 4) {
-    $(".feedback").removeClass("feedback-right");
-    $(".feedback").addClass("feedback-wrong");
+    // $(".feedback").removeClass("feedback-right");
+    // $(".feedback").addClass("feedback-wrong");
     $(this).addClass("wrongShow");
     $(this).append("<audio src='gongWrong.mp3' preload='auto' autoplay ></audio>");
   }

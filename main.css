@@ -23,18 +23,19 @@ h1 {
 
 .feedback {
   padding: 10px;
-  margin: 30px auto 20px;
+  margin: 20px auto 0;
   border-radius: 35px;
   width: 200px;
+  font-size: 1.1em;
 }
 
-.feedback-wrong {
+/*.feedback-wrong {
   background-color: #ffbaaa;
 }
 
 .feedback-right {
   background-color: #c5e89b;
-}
+}*/
 
 .q1, .q2, .q3, .q4, .q5 {
   display: block;
