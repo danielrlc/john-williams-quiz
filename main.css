@@ -29,14 +29,6 @@ h1 {
   font-size: 1.1em;
 }
 
-/*.feedback-wrong {
-  background-color: #ffbaaa;
-}
-
-.feedback-right {
-  background-color: #c5e89b;
-}*/
-
 .q1, .q2, .q3, .q4, .q5 {
   display: block;
 }
@@ -85,13 +77,11 @@ b {
 }
 
 .q0, .q6 {
-  /*border: solid 2px #6e91a1;*/
   border-radius: 8px;
   margin: 20px auto;
   width: 340px;
   padding: 10px;
   line-height: 1.5;
-  /*text-align: left;*/
 }
 
 .qNum {
@@ -169,6 +159,8 @@ b {
   }
 }
 
-@media (max-width: 599px) {
-  
+@media (max-width: 399px) {
+  .content {
+    width: 100%;
+  }
 }
