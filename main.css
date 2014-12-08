@@ -158,9 +158,3 @@ b {
     float: right;
   }
 }
-
-@media (max-width: 399px) {
-  .content {
-    width: 320px;
-  }
-}
