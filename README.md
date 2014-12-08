@@ -1,8 +1,6 @@
 John Williams Quiz
 ==================
 
-[You can do the quiz here](http://ibdan.github.io/john-williams-quiz/)
-
 This quiz demonstrates my improving front-end skills in HTML, CSS, JavaScript, jQuery, usability and design. The site is partially responsive, as the quiz images adjust to the size of the screen. Nearly all the quiz content is injected into the HTML from the JavaScript file. I created a prototype object from which all the question objects were created.
 
 I am getting a better grasp of how to make colours work together, and the importance of white space. I used [Paletton.com](http://paletton.com/) to help me choose a suitable blue, green and red colour palette to work with.
