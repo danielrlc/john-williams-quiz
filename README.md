@@ -7,4 +7,4 @@ This quiz demonstrates my improving front-end skills in HTML, CSS, JavaScript, j
 
 I am getting a better grasp of how to make colours work together, and the importance of white space. I used [Paletton.com](http://paletton.com/) to help me choose a suitable blue, green and red colour palette to work with.
 
-While a short quiz is perhaps fairly easy to design, I have tried to make the user experience so simple that the quiz-taker has no distractions at all. I decided that the quiz-taker has to find the right answer before she's allowed to continue on to the next question. This will help her remember the answer better. (This is perhaps not important in a fairly trivial quiz like this one – but would be useful where memorisation is important.)
+While a short quiz is perhaps fairly easy to design, I have tried to make the user experience so simple that the quiz-taker has no distractions at all. I decided that the quiz-taker has to find the right answer before she's allowed to continue on to the next question. This will help her remember the answer better.
