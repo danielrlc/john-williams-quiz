@@ -51,22 +51,22 @@ $(".next").on("click", function() {
 var finalScore = function() {
   $(".game-info, .next").hide();
     if (score === 100) {
-      $(".q6").append("<p>You chose... very wisely.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... very wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 80) {
-      $(".q6").append("<p>You chose... wisely.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 60) {
-      $(".q6").append("<p>You chose... quite wisely.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... quite wisely.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 40) {
-      $(".q6").append("<p>You chose... a little poorly.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... a little poorly.</p><p>Your final score is " + score + "%.</p>");
     }
     else if (score === 20) {
-      $(".q6").append("<p>You chose... poorly.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... poorly.</p><p>Your final score is " + score + "%.</p>");
     }
     else {
-      $(".q6").append("<p>You chose... very poorly.</p><p>Your final score is " + score + "%.</p>");
+      $(".q6").append("<p>You chose ... very poorly.</p><p>Your final score is " + score + "%.</p>");
     }
   };
 
